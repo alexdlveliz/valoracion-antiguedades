@@ -22,7 +22,7 @@ class Profile(ParentModel):
         'Titrator',
         default=True,
         help_text=(
-            'Help easily distinguish users and perform queries accordingly'
+            'Help easily distinguish users and perform queries accordingly '
             'Titrators are the main type of user'
         )
     )
