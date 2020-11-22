@@ -13,13 +13,13 @@ class ParentModel(models.Model):
         - modified (DateTime): when the object was modified
     """
     
-    created = models.DateField(
+    created = models.DateTimeField(
         'created at',
         auto_now_add=True,
         help_text='Date time on which the object was created'
     )
 
-    modified = models.DateField(
+    modified = models.DateTimeField(
         'modified at',
         auto_now=True,
         help_text='Date time on which the object was modified'
@@ -27,6 +27,6 @@ class ParentModel(models.Model):
 
     class Meta:
         """ Meta options """
-        abstract = True,
+        abstract = True
         get_latest_by = 'created',
         ordering = ['-created', '-modified']

@@ -17,6 +17,8 @@ class Product(ParentModel):
     
     description = models.TextField(max_length=500)
 
+    is_sold = models.BooleanField(default=False)
+
     def __str__(self):
         """ returns product's str representation """
-        return str(self.name)
+        return self.name
