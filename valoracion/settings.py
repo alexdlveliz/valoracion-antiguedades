@@ -42,7 +42,8 @@ AUTHENTICATION_BACKENDS = (
 # Application definition
 LOCAL_APPS = [
     'valoracion.users.apps.UsersAppConfig',
-    'valoracion.products.apps.ProductsAppConfig'
+    'valoracion.products.apps.ProductsAppConfig',
+    'valoracion.titrations.apps.TitrationsAppConfig',
 ]
 
 
