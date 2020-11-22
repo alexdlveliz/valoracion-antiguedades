@@ -35,15 +35,6 @@ class User(ParentModel, AbstractUser):
     # Field declaration to bypass the required fields
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
 
-    is_titrator = models.BooleanField(
-        'Titrator',
-        default=True,
-        help_text = (
-            'Help easily distinguish users and perform queries accordingly'
-            'Titrators are the main type of user'
-        )
-    )
-
     def __str__(self):
         """ return username """
         return self.username

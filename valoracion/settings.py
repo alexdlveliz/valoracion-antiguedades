@@ -25,12 +25,28 @@ SECRET_KEY = 'e&9$-hd08pd_y5cql^mw^=splxofy#nb$58ztq@xo)7hwz18hp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "0.0.0.0",
+    "127.0.0.1",
+]
 
+# Users & Authentication
+AUTH_USER_MODEL = 'users.User'
+
+# Authentication backends
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 # Application definition
+LOCAL_APPS = [
+    'valoracion.users.apps.UsersAppConfig'
+]
 
-INSTALLED_APPS = [
+
+INSTALLED_APPS = LOCAL_APPS + [
+    'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
