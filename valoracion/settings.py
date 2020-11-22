@@ -40,14 +40,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 # Application definition
-LOCAL_APPS = [
-    'valoracion.users.apps.UsersAppConfig',
-    'valoracion.products.apps.ProductsAppConfig',
-    'valoracion.titrations.apps.TitrationsAppConfig',
-]
-
-
-INSTALLED_APPS = LOCAL_APPS + [
+DJANGO_APPS = [
     'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -56,6 +49,19 @@ INSTALLED_APPS = LOCAL_APPS + [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+LOCAL_APPS = [
+    'valoracion.users.apps.UsersAppConfig',
+    'valoracion.products.apps.ProductsAppConfig',
+    'valoracion.titrations.apps.TitrationsAppConfig',
+]
+
+THIRD_PARTY_APPS = [
+    'rest_framework',
+]
+
+
+INSTALLED_APPS = LOCAL_APPS + THIRD_PARTY_APPS + DJANGO_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -136,3 +142,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Django REST Framework
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
+}
