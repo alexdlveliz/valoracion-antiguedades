@@ -9,6 +9,7 @@ from valoracion.products.serializers import ProductModelSerializer
 # Models
 from valoracion.products.models import Product
 
+
 class ProductViewSet(viewsets.ModelViewSet):
     """ Product view set """
 
@@ -21,14 +22,14 @@ class ProductViewSet(viewsets.ModelViewSet):
         if self.action == 'list':
             return queryset.filter(is_sold=False)
         return queryset
-    
+
     def create_queryset(self, serializer):
         """ Create product """
-        
+
         product = serializer.save()
         Product.objects.create(
-            name = product.name,
-            description = product.description,
-            is_sold = False
+            name=product.name,
+            description=product.description,
+            is_sold=product.is_sold,
+            score=product.score
         )
-        

@@ -12,11 +12,11 @@ class TitrationAdmin(admin.ModelAdmin):
     """ Titration admin """
 
     list_display = (
-        'user',
+        'profile',
         'product',
         'score'
     )
 
-    search_fields = ('user', 'product')
+    search_fields = ('profile', 'product')
 
-    list_filter = ('user', 'product', 'score')
+    list_filter = ('profile', 'product')

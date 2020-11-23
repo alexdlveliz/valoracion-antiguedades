@@ -13,9 +13,9 @@ class Titration(ParentModel):
     to a product by the titrators
     """
 
-    user = models.OneToOneField('users.user', on_delete=models.CASCADE)
+    profile = models.ForeignKey('users.profile', related_name='profile', on_delete=models.CASCADE)
 
-    product = models.OneToOneField('products.product', on_delete=models.CASCADE)
+    product = models.ForeignKey('products.product', related_name='product', on_delete=models.CASCADE)
 
     score = models.FloatField(
         default=3.0,
@@ -26,4 +26,4 @@ class Titration(ParentModel):
 
     def __str__(self):
         """ returns the titration reference """
-        return str(self.product)
+        return str(self.score)

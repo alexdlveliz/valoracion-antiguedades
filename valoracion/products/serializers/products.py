@@ -3,7 +3,7 @@
 # Django REST Framework
 from rest_framework import serializers
 
-# Model
+# Models
 from valoracion.products.models import Product
 
 
@@ -22,11 +22,13 @@ class ProductModelSerializer(serializers.ModelSerializer):
 
     is_sold = serializers.BooleanField(default=False)
 
+    score = serializers.FloatField(default=3.0, required=False)
+
     class Meta:
         """ Meta Class """
 
         model = Product
         fields = (
             'id', 'name', 'description',
-            'is_sold'
+            'score', 'is_sold'
         )

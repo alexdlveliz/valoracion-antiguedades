@@ -19,6 +19,8 @@ class Product(ParentModel):
 
     is_sold = models.BooleanField(default=False)
 
+    score = models.FloatField(default=3.0)
+
     def __str__(self):
         """ returns product's str representation """
         return self.name
