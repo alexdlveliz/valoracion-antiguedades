@@ -7,8 +7,7 @@ App de valoración de antigüedades, proyecto de evaluación para pasantía en C
 - Django 3.1.3 o superior
 
 ## Instalación
-`$ pip3 install -r requirements/requirements.txt`
-`$ python3 manage.py makemigrations`
-`$ python3 manage.py migrate`
-`$ python3 manage.py runserver`
-
+- `$ pip3 install -r requirements/requirements.txt`
+- `$ python3 manage.py makemigrations`
+- `$ python3 manage.py migrate`
+- `$ python3 manage.py runserver`
